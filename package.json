@@ -1,0 +1,10 @@
+{
+  "name": "kappa-birthday-webos",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "check": "node tests/compatibility.cjs",
+    "preview": "python3 scripts/prepare.py && python3 -m http.server 8000 --bind 127.0.0.1 --directory app"
+  },
+  "devDependencies": { "acorn": "8.15.0" }
+}

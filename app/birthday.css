@@ -1,0 +1,81 @@
+html, body { width:100%; height:100%; background:#100b14; font-family:'Outfit','Noto Sans CJK TC','PingFang TC','Microsoft JhengHei',sans-serif; }
+#screen { width:1920px; height:1080px; position:absolute; transform-origin:0 0; overflow:hidden; background:radial-gradient(ellipse at 61% 43%,#4a293c 0%,#291b2b 40%,#110d16 84%); }
+#ambientA,#ambientB,#hero,#greeting { display:none; }
+header { top:66px; left:92px; right:88px; align-items:center; }
+#clock { font-size:86px; }
+#ampm { font-size:25px; margin-bottom:10px; }
+#date { font-size:24px; letter-spacing:1px; margin-bottom:12px; }
+.divider { height:40px; margin:0 26px 12px; }
+.pill { height:78px; font-size:30px; padding:0 30px; }
+.pill svg { width:36px; height:36px; }
+#birthdayScene { position:absolute; top:0; right:0; bottom:0; left:0; transition:opacity .3s; }
+.birthday-title { position:absolute; left:50px; top:260px; width:440px; text-align:center; color:#ffd0cb; text-shadow:0 0 8px #f591a3,0 0 30px #dc567e; }
+.crown { font-size:76px; height:80px; transform:rotate(-15deg); }
+.birthday-title h1 { font-family:'Noto Sans CJK TC','Microsoft JhengHei',sans-serif; font-size:136px; font-weight:700; letter-spacing:7px; line-height:1.3; }
+.flourish { font-size:32px; height:50px; }
+#birthdaySubtitle { font-size:29px; letter-spacing:5px; white-space:nowrap; }
+.heart-rule { margin:26px 0 8px; font-size:34px; letter-spacing:7px; }
+#birthdayDate { font-size:61px; letter-spacing:10px; }
+.floating-heart { position:absolute; font-size:70px; animation:float-heart 5s ease-in-out infinite; }
+.h1 { left:0; top:0; transform:rotate(-20deg); }.h2 { right:-8px; bottom:0; font-size:56px; animation-delay:-2s; }
+.cabinet { position:absolute; left:524px; top:195px; width:1310px; height:582px; border:18px solid #e6a7ad; border-radius:30px; background:linear-gradient(120deg,#e8b39e,#b26d82,#f7c7bb); box-shadow:0 0 0 2px #ffe8ce,inset 0 0 0 4px #ffedc8,0 0 27px #aa5277; padding:15px; }
+.glass-room { position:relative; height:100%; overflow:hidden; border-radius:14px; border:3px solid #f8c3ae; background:radial-gradient(ellipse at 35% 60%,#8c525f,#3c2334 70%); box-shadow:inset 0 0 18px #ee8d8d; }
+.glass-room:after { content:''; position:absolute; top:0; left:0; right:0; height:8px; background:#ffe7bf; box-shadow:0 0 16px #ff997f; pointer-events:none; }
+.marquee { position:absolute; top:-39px; left:395px; z-index:2; border:3px solid #ffc3a3; border-radius:13px; padding:12px 30px; font-size:26px; letter-spacing:7px; color:#ffe2bd; background:#261824; box-shadow:0 0 10px #fe9281; white-space:nowrap; }
+/* Deliberate rectangular excerpt from the approved art, NOT a transparent cutout.
+   Source image is 1672x941. Only x=494..1098, y=210..656 is visible. */
+.portrait-crop { position:absolute; left:0; top:0; bottom:0; width:55%; overflow:hidden; }
+#coupleArt { position:absolute; width:1906px; height:1073px; max-width:none; left:-563px; top:-239px; }
+#artMissing { display:none; padding:160px 30px; font-size:28px; color:#ffd5d6; text-align:center; line-height:1.8; }
+.birthday-card { position:absolute; top:35px; right:22px; width:525px; min-height:440px; padding:38px 32px 22px; border:3px solid #f7b0a7; border-radius:22px; color:#613c38; background:linear-gradient(125deg,#fff1dd,#ffe6d9); box-shadow:0 0 0 6px #ffddc7,0 8px 20px #40202c; transform:rotate(-1.5deg); }
+.birthday-card:before { content:''; position:absolute; top:10px; right:10px; bottom:10px; left:10px; border:2px dashed #eeb4ac; border-radius:14px; pointer-events:none; }
+#birthdayMessage { position:relative; font-size:27px; line-height:1.64; letter-spacing:.5px; word-break:normal; overflow-wrap:break-word; user-select:text; }
+#birthdaySignature { position:relative; text-align:right; font-size:29px; margin-top:10px; padding-right:12px; }
+.ribbon { position:absolute; right:18px; top:-41px; font-size:93px; color:#e4838a; line-height:1; }
+.card-hearts { position:absolute; bottom:15px; left:28px; color:#de8792; font-size:29px; }
+.plush-bed { position:absolute; left:0; right:0; bottom:-42px; height:110px; white-space:nowrap; pointer-events:none; }
+.plush-bed span { display:inline-block; width:155px; height:100px; text-align:center; border-radius:50%; color:#f7a6b6; background:radial-gradient(ellipse at 40% 25%,#ffe8d5,#c97694); font-size:85px; text-shadow:0 3px #ecb7bf; box-shadow:0 -2px 5px #ffe2ca; transform:rotate(-12deg); }
+.plush-bed span:nth-child(even) { background:radial-gradient(ellipse at 40% 25%,#fff4de,#e2afa7); transform:translateY(15px) rotate(14deg); }
+.claw-rig { position:absolute; left:54%; top:0; width:75px; height:145px; transform-origin:50% 0; animation:claw-sway 6s ease-in-out infinite; z-index:1; }
+.cable { margin:auto; width:8px; height:82px; background:linear-gradient(90deg,#a88390,#fff1db,#a88390); }.claw { font-size:84px; line-height:65px; color:#ffdab4; text-shadow:0 0 7px #df8996; }
+#viewport { pointer-events:none; } .item { pointer-events:auto; }
+#dockBand { background:rgba(26,16,28,.7); border-color:rgba(245,180,197,.15); }
+#glass { background:transparent; border-color:#fff6ed; box-shadow:0 0 15px rgba(255,213,224,.5); }
+#glass:before { display:none; }
+#previewBadge { display:none; position:absolute; left:92px; bottom:20px; font-size:18px; color:#c6aebf; z-index:4; }
+#emptyApps { display:none; position:absolute; left:100px; right:100px; top:880px; text-align:center; font-size:25px; color:#ead0df; }
+body.scrolled #birthdayScene { opacity:0; pointer-events:none; }
+#toast { max-width:1500px; white-space:nowrap; }
+body[data-motion="off"] *,body[data-motion="off"] *:before,body[data-motion="off"] *:after { animation:none !important; transition:none !important; }
+body[data-motion="reduced"] .floating-heart,body[data-motion="reduced"] .claw-rig { animation:none; }
+@keyframes float-heart { 0%,100% { transform:translateY(0) rotate(-15deg); } 50% { transform:translateY(-12px) rotate(-10deg); } }
+@keyframes claw-sway { 0%,100% { transform:rotate(-3deg); } 50% { transform:rotate(3deg); } }
+@media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } }
+
+/* Approved excerpt already includes its claw; avoid a second claw over text. */
+.claw-rig { display:none; }
+
+#birthdayMessage { white-space:pre-wrap; }
+
+.birthday-emoji { display:inline-block; width:29px; height:29px; color:transparent; background:url('media/emoji-1f970.png') center center / contain no-repeat; vertical-align:-4px; }
+.crown svg { width:76px; height:70px; fill:none; stroke:currentColor; stroke-width:3; }
+
+/* Legacy-TV navigation: short, non-overshooting compositor transforms. */
+#glass { will-change:transform; transition:opacity 100ms ease,transform 140ms ease-out; box-shadow:0 0 6px rgba(255,213,224,.4); }
+.item.focused .card { transform:scale(1.04); transition:transform 120ms ease-out; }
+.card { transition:transform 120ms ease-out; }
+#stage { transition:transform 180ms ease-out; }
+body[data-motion="reduced"] .item { transition:opacity 120ms ease; }
+body[data-motion="reduced"] #birthdayScene { transition:opacity 120ms ease; }
+
+/* Cache the static birthday scene separately from the scrolling app grid. */
+#birthdayScene { transform:translateZ(0); backface-visibility:hidden; }
+#stage { will-change:transform; }
+body[data-motion="reduced"] .card,body[data-motion="reduced"] .item.focused .card { transform:none; transition:none; }
+body[data-motion="reduced"] #birthdayScene { transition:none; }
+body[data-motion="reduced"] #glass { box-shadow:none; }
+
+/* Birthday enamel artwork; originals stay available as load-error fallbacks. */
+.card.themed img { left:0; width:100%; height:100%; transform:none; }
+.card.themed:after { box-shadow:inset 0 0 0 1px rgba(255,230,210,.6); }
+.card:not(.themed):after { box-shadow:inset 0 0 0 2px rgba(238,174,181,.4); }
